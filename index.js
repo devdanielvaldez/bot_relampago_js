@@ -83,7 +83,9 @@ const io = socketIo(server);
 // Inicializar el cliente de WhatsApp
 const client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: {headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions']}
+    puppeteer: {
+        args: ['--no-sandbox']
+    }
 });
 
 // Manejar la generación del código QR
